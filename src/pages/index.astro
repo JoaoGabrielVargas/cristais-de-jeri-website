@@ -1,17 +1,470 @@
 ---
-
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Cristais de Jeri — em breve, a melhor hospedagem em Jericoacoara."
+    />
+    <title>Cristais de Jeri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Square+Peg&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="hero">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="/videos/video-bangalo-1080p.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero__overlay"></div>
+
+      <header class="hero__header">
+        <a href="/" aria-label="Cristais de Jeri">
+          <img
+            src="/images/logo-horizontal-branco.png"
+            alt="Cristais de Jeri"
+          />
+        </a>
+      </header>
+
+      <div class="hero__content">
+        <p class="hero__kicker">EcoVillage · Jericoacoara — CE</p>
+
+        <h1>
+          CRISTAIS
+          <span>DE JERI</span>
+        </h1>
+
+        <p class="hero__description">
+          Charmosos bangalôs ecológicos, integrados a natureza, para você curtir
+          as maravilhas incríveis e emocionantes de Jericoacoara, mas também ter
+          aquele momento só seu, em paz consigo e com o planeta.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#bangalos" class="hero__button hero__button--primary">
+            Conhecer o bangalô
+          </a>
+
+          <a href="#localizacao" class="hero__button hero__button--ghost">
+            Ver localização
+          </a>
+        </div>
+      </div>
+    </main>
+    <section class="bangalos" id="bangalos">
+      <div class="bangalos__header">
+        <p class="bangalos__kicker">Os bangalôs</p>
+
+        <h2>Seu espaço em Jeri</h2>
+
+        <p class="bangalos__intro">
+          Um bangalô ecológico que combina conforto, natureza e a essência de
+          Jericoacoara.
+        </p>
+      </div>
+
+      <div class="bangalo">
+        <div class="bangalo__image">
+          <img src="/images/safira-1.jpg" alt="Bangalô Safira" loading="lazy" />
+        </div>
+
+        <div class="bangalo__content">
+          <span class="bangalo__badge"> O diferencial: hidro privativa </span>
+
+          <h3>Bangalô Safira</h3>
+
+          <ul>
+            <li>Quarto espaçoso</li>
+            <li>Banheiro</li>
+            <li>Copa funcional</li>
+            <li>Sala de estar acolhedora</li>
+            <li>Varanda privativa com hidro e redário</li>
+          </ul>
+
+          <p class="bangalo__details">
+            39 m² de área construída + 29 m² de terraço privativo com pergolado,
+            redário e hidro.
+          </p>
+
+          <a href="#contato" class="bangalo__button">
+            {' '}
+            Conhecer o bangalô{' '}
+          </a>
+        </div>
+      </div>
+
+      <div class="bangalo__gallery">
+        <img src="/images/safira-2.jpg" alt="Bangalô Safira" loading="lazy" />
+
+        <img
+          src="/images/plantas.jpg"
+          alt="Planta do Bangalô Safira"
+          loading="lazy"
+        />
+      </div>
+    </section>
+  </body>
 </html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html),
+  :global(body) {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  :global(body) {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #142a63;
+    color: #f4ede1;
+  }
+
+  .hero__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero__header {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 2;
+  }
+
+  .hero__header img {
+    display: block;
+    width: 180px;
+    height: auto;
+  }
+
+  .hero__content {
+    position: absolute;
+    left: 2rem;
+    bottom: 3rem;
+    z-index: 2;
+    max-width: 620px;
+  }
+
+  .hero__kicker {
+    margin: 0 0 1.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .hero__content h1 {
+    margin: 0;
+    font-family: 'Antonio', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .hero__content h1 span {
+    display: block;
+    color: #71d3c2;
+  }
+
+  .hero__description {
+    max-width: 520px;
+    margin: 1.75rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.65;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.75rem 1.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .hero__button--primary {
+    background: #71d3c2;
+    color: #142a63;
+  }
+
+  .hero__button--primary:hover {
+    background: #eee96e;
+    transform: translateY(-2px);
+  }
+
+  .hero__button--ghost {
+    border: 1.5px solid #f4ede1;
+    color: #f4ede1;
+  }
+
+  .hero__button--ghost:hover {
+    background: #f4ede1;
+    color: #142a63;
+  }
+
+  /* Classes Bangalos */
+
+  .bangalos {
+    padding: 6rem 2rem;
+    background: #f4ede1;
+    color: #142a63;
+  }
+
+  .bangalos__header {
+    max-width: 720px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .bangalos__kicker {
+    margin: 0 0 0.75rem;
+    color: #71d3c2;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  .bangalos__header h2 {
+    margin: 0 0 1rem;
+    font-family: 'Antonio', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .bangalos__intro {
+    max-width: 55ch;
+    margin: 0 auto;
+    color: rgba(20, 42, 99, 0.7);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .bangalo {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .bangalo__image {
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 50px rgba(20, 42, 99, 0.12);
+  }
+
+  .bangalo__image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .bangalo__badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: #71d3c2;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .bangalo__content h3 {
+    margin: 0 0 1.25rem;
+    color: #142a63;
+    font-family: 'Square Peg', cursive;
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 0.9;
+  }
+
+  .bangalo__content ul {
+    display: grid;
+    gap: 0.7rem;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bangalo__content li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+  }
+
+  .bangalo__content li::before {
+    content: '◆';
+    flex-shrink: 0;
+    color: #71d3c2;
+    font-size: 0.55rem;
+    margin-top: 0.35rem;
+  }
+
+  .bangalo__details {
+    margin: 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(20, 42, 99, 0.15);
+    color: rgba(20, 42, 99, 0.65);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .bangalo__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    margin-top: 1.75rem;
+    padding: 0.75rem 1.6rem;
+    border-radius: 999px;
+    background: #142a63;
+    color: #f4ede1;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .bangalo__button:hover {
+    background: #204295;
+    transform: translateY(-2px);
+  }
+
+  .bangalo__gallery {
+    max-width: 1180px;
+    margin: 4rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .bangalo__gallery img {
+    display: block;
+    width: 100%;
+    border-radius: 1.25rem;
+  }
+
+  @media (max-width: 600px) {
+    .hero__header {
+      top: 1.5rem;
+      left: 1.5rem;
+    }
+
+    .hero__header img {
+      width: 145px;
+    }
+
+    .hero__content {
+      left: 1.5rem;
+      right: 1.5rem;
+      bottom: 2rem;
+      max-width: none;
+    }
+
+    .hero__kicker {
+      margin-bottom: 1.2rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+    }
+
+    .hero__content h1 {
+      font-size: clamp(3.5rem, 17vw, 5rem);
+    }
+
+    .hero__description {
+      margin-top: 1.4rem;
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .hero__actions {
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .hero__button {
+      min-height: 44px;
+      padding: 0.7rem 1.35rem;
+      font-size: 0.72rem;
+    }
+    .bangalos {
+      padding: 4rem 1.5rem;
+    }
+
+    .bangalos__header {
+      margin-bottom: 3rem;
+    }
+
+    .bangalo {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .bangalo__content h3 {
+      font-size: 4rem;
+    }
+
+    .bangalo__gallery {
+      grid-template-columns: 1fr;
+      margin-top: 2.5rem;
+    }
+  }
+</style>
